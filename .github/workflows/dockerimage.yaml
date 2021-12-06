@@ -15,7 +15,7 @@ jobs:
     - name: Build the tagged Docker image
       run: docker build . --file Dockerfile --tag bclavijo110430/ang:${{steps.vars.outputs.tag}}
     - name: Push the tagged Docker image
-  #    run: docker push bclavijo110430/angular-cli:${{steps.vars.outputs.tag}}
+      run: docker push bclavijo110430/angular-cli:${{steps.vars.outputs.tag}}
     - name: Build the latest Docker image
       run: docker build . --file Dockerfile --tag bclavijo110430/angular-cli:latest
     - name: Push the latest Docker image
