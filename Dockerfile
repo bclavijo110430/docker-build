@@ -3,7 +3,7 @@ FROM php:7.3-apache
 ARG WORKDIR=/debmedia
 ENV WORKDIR=${WORKDIR}
 ARG GITTOKEN='${{secrets.OAUTH_TOKEN}}'
-ENV GITA="$GITTOKEN"
+ENV GITA='$GITTOKEN'
 ENV VERSION='${{steps.vars.outputs.tag}}'
 ## imagen base##
 ##  instalacion de dependencias ##
@@ -26,4 +26,4 @@ RUN wget https://github.com/gruntwork-io/fetch/releases/download/v0.4.2/fetch_li
    
 #RUN mkdir /usr/local/jdk
 #RUN chmod 777 /usr/local/jdk
-RUN  ./fetch_linux_amd64 --github-oauth-token='$GITA' --repo="https://github.com/debmedia/debQ/" --tag="v3.77.1" --release-asset="stage.zip" ./
+RUN  ./fetch_linux_amd64 --github-oauth-token="$GITA" --repo="https://github.com/debmedia/debQ/" --tag="v3.77.1" --release-asset="stage.zip" ./
