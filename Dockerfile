@@ -25,4 +25,4 @@ RUN wget https://github.com/gruntwork-io/fetch/releases/download/v0.4.2/fetch_li
    
 #RUN mkdir /usr/local/jdk
 #RUN chmod 777 /usr/local/jdk
-RUN  "./fetch_linux_amd64 --github-oauth-token='${{secrets.OAUTH_TOKEN}}' --repo="https://github.com/debmedia/debQ/" --tag="v3.77.1" --release-asset="stage.zip" ./"
+RUN  ./fetch_linux_amd64 --github-oauth-token='${{secrets.OAUTH_TOKEN}}' --repo="https://github.com/debmedia/debQ/" --tag="v3.77.1" --release-asset="stage.zip" ./
