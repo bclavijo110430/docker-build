@@ -2,7 +2,7 @@ FROM php:7.3-apache
 
 ARG WORKDIR=/debmedia
 ENV WORKDIR=${WORKDIR}
-#ARG GITTOKEN: ${{secrets.OAUTH_TOKEN}}
+ARG OAUTH_TOKEN='${{ secrets.OAUTH_TOKEN }}'
 ENV VERSION='${{ steps.vars.outputs.tag }}'
 ## imagen base##
 ##  instalacion de dependencias ##
@@ -20,9 +20,9 @@ RUN apt-get update \
 RUN printenv VERSION
 
 
-#RUN wget https://github.com/gruntwork-io/fetch/releases/download/v0.4.2/fetch_linux_amd64\
+RUN wget https://github.com/gruntwork-io/fetch/releases/download/v0.4.2/fetch_linux_amd64\
     #&& chmod +x ./fetch_linux_amd64
    
 #RUN mkdir /usr/local/jdk
 #RUN chmod 777 /usr/local/jdk
-#RUN  ./fetch_linux_amd64 "--github-oauth-token='${{secrets.OAUTH_TOKEN}}'" --repo="https://github.com/debmedia/debQ/" --tag="v3.77.1" --release-asset="stage.zip" ./
+RUN  "./fetch_linux_amd64 --github-oauth-token="$OAUTH_TOKEN" --repo="https://github.com/debmedia/debQ/" --tag="v3.77.1" --release-asset="stage.zip" ./"
