@@ -17,7 +17,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* 
    # && docker-php-ext-install zip 
 #RUN export lsls="${{ secrets.OAUTH_TOKEN }}" 
-RUN "printenv VERSION"
+RUN printenv VERSION
 
 
 #RUN wget https://github.com/gruntwork-io/fetch/releases/download/v0.4.2/fetch_linux_amd64\
