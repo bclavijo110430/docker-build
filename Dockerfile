@@ -3,7 +3,7 @@ FROM php:7.3-apache
 ARG WORKDIR=/debmedia
 ENV WORKDIR=${WORKDIR}
 ARG GITTOKEN:'${{secrets.OAUTH_TOKEN}}'
-ENV GITA='$GITTOKEN'
+ENV GITA="$GITTOKEN"
 ENV VERSION='${{steps.vars.outputs.tag}}'
 ## imagen base##
 ##  instalacion de dependencias ##
