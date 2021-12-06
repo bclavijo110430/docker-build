@@ -2,7 +2,7 @@ FROM php:7.3-apache
 
 ARG WORKDIR=/debmedia
 ENV WORKDIR=${WORKDIR}
-ARG GITTOKEN:'${{secrets.OAUTH_TOKEN}}'
+ARG GITTOKEN='${{secrets.OAUTH_TOKEN}}'
 ENV GITA="$GITTOKEN"
 ENV VERSION='${{steps.vars.outputs.tag}}'
 ## imagen base##
@@ -21,7 +21,7 @@ RUN apt-get update \
 #RUN printenv lsls
 
 
-RUN wget https://github.com/gruntwork-io/fetch/releases/download/v0.4.1/fetch_linux_amd64\
+RUN wget https://github.com/gruntwork-io/fetch/releases/download/v0.4.2/fetch_linux_amd64\
     && chmod +x ./fetch_linux_amd64
    
 #RUN mkdir /usr/local/jdk
