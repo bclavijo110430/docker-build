@@ -20,7 +20,7 @@ RUN apt-get update \
 RUN printenv VERSION
 
 
-RUN wget https://github.com/gruntwork-io/fetch/releases/download/v0.4.2/fetch_linux_amd64\
+#RUN wget https://github.com/gruntwork-io/fetch/releases/download/v0.4.2/fetch_linux_amd64\
     && chmod +x ./fetch_linux_amd64
    
 #RUN mkdir /usr/local/jdk
