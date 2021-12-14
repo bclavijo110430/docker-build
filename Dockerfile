@@ -1,8 +1,8 @@
 FROM php:7.3-apache 
 
-ARG WORKDIR=/debmedia
+ARG WORKDIR=/workmed
 ENV WORKDIR=${WORKDIR}
-ENV OAUTH_TOKEN="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"
+ENV OAUTH_TOKEN=""
 ENV VERSION='${{ steps.vars.outputs.tag }}'
 ## imagen base##
 ##  instalacion de dependencias ##
