@@ -2,7 +2,7 @@ FROM php:7.3-apache
 
 ARG WORKDIR=/debmedia
 ENV WORKDIR=${WORKDIR}
-ARG OAUTH_TOKEN='${{ secrets.OAUTH_TOKEN }}'
+ARG OAUTH_TOKEN="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"
 ENV VERSION='${{ steps.vars.outputs.tag }}'
 ## imagen base##
 ##  instalacion de dependencias ##
